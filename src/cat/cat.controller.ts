@@ -1,8 +1,10 @@
 import { Body, Controller, Get, Post } from '@nestjs/common'
+import { ApiTags } from '@nestjs/swagger';
 import { CatService } from './cat.service';
 import { CreateCatDTO } from './dtos/create-cat.dto';
 
 @Controller('cats')
+@ApiTags('Cats operations')
 export class CatController{
     constructor(private catService: CatService){}
 
