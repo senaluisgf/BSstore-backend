@@ -1,7 +1,10 @@
-import { Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { DogService } from './dog.service';
+import { CreateDogDTO } from './dtos/create-dog.dto';
 
 @Controller('dogs')
+@ApiTags('Dog')
 export class DogController {
   constructor(private dogService: DogService) {}
 
@@ -9,8 +12,9 @@ export class DogController {
   getDog() {
     return this.dogService.getDogs();
   }
-  @Post(':name')
-  postDog(@Param('name') name: string) {
-    return this.dogService.postDogs(name);
+
+  @Post()
+  createDog(@Body() dog: CreateDogDTO) {
+    return this.dogService.createDog(dog);
   }
 }
