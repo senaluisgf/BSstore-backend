@@ -4,7 +4,7 @@ import { CatService } from './cat.service';
 import { CreateCatDTO } from './dtos/create-cat.dto';
 
 @Controller('cats')
-@ApiTags('Cats operations')
+@ApiTags('Cats')
 export class CatController{
     constructor(private catService: CatService){}
 
