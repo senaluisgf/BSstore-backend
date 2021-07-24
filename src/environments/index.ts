@@ -2,6 +2,8 @@ import * as config from 'config'
 
 export const environment = {
     database: {
-        mongo: config.get<string>('DATABASE.MONGO')
+        mongo: {
+            uri: config.get<string>('database.mongo.uri')
+        }
     }
 }
