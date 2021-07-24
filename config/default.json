@@ -1,5 +1,0 @@
-{
-    "DATABASE": {
-        "MONGO": "mongodb+srv://bsstore:BSStore@cluster0.aebtc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-    }
-}
